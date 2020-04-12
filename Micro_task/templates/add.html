@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Want to give a review for an item and help customers decide?</h1>
+  <p>feel free to add a review:</p>
+  <form method="POST">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      {{ form.name.label }} {{form.name(placeholder="name") }}
+      {{ form.item.label }} {{form.item(placeholder="item") }}
+      {{ form.review.label }} {{ form.review (placeholder="review" ) }}
+      {{ form.submit(class="btn btn-outline-secondary") }}
+  </form>
+</div>
+{% endblock %}
